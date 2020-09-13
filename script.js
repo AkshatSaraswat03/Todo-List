@@ -37,6 +37,10 @@ function toggleInputButtons() {
   btnCleanup.prop('disabled', ulTasks.children().length < 1)
 }
 
+// adding enter key functionality
+inpNewTask.keypress((e) => {
+  if (e.which == 13) addItem()
+})
 inpNewTask.on('input', toggleInputButtons)
 
 btnAdd.click(addItem)
